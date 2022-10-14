@@ -3,7 +3,7 @@ session_start();
 // membuat database / isikan dengan mnama kamu
 $database = [
     'username' => 'rafli',
-    'password' => 'rondoo1'
+    'password' => '1'
 ];
 
 // cek apakah terdapat submit yang dilakukan
@@ -16,13 +16,16 @@ if(isset($_POST['submit'])){
     if ($username == $database['username'] && $password == $database['password']) {
         // set session username
         $_SESSION['username'] = $username;
-        // redirect/mengarahkan meuju halaman admin
+        //redirect/mengarahkan menuju halaman admin
         header("location:admin.php");
     } else {
         // memunculkan pemberitahuan gagal login dan redirect ke login page
-        echo '<script> alert("username atau password salah!");
+        echo '<script> alert("Username atau password salah!")
         window.location="login-page.php"; </script>';
     }
+    
+
+   
 } else {
     // jika tidak ada submit mengembalikan ke login-page
     echo '<script> window.location="login-page.php; ,</script>';
